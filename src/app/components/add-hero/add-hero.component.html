@@ -1,0 +1,54 @@
+<div>
+    <div class="submit-form">
+      <div *ngIf="!submitted">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            required
+            [(ngModel)]="hero.name"
+            name="name"
+          />
+        </div>
+        <div class="form-group">
+          <label for="alterEgo">Alter Ego</label>
+          <input
+            class="form-control"
+            id="alterEgo"
+            required
+            [(ngModel)]="hero.alterEgo"
+            name="alterEgo"
+          />
+        </div>
+        <div class="form-group">
+            <label for="power">Power</label>
+            <input
+              type="text"
+              class="form-control"
+              id="power"
+              required
+              [(ngModel)]="hero.power"
+              name="power"
+            />
+          </div>
+          <div class="form-group">
+            <label for="name">Profil Picture</label>
+            <input
+              type="text"
+              class="form-control"
+              id="picture"
+              required
+              [(ngModel)]="hero.picture"
+              name="picture"
+            />
+          </div>
+        <button (click)="saveNewHero()" class="btn btn-success">Submit</button>
+      </div>
+      <div *ngIf="submitted">
+        <h4>New Hero was submitted successfully!</h4>
+        <button class="btn btn-success" (click)="newHero()">Add</button>
+      </div>
+    </div>
+  </div>
