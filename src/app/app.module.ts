@@ -12,7 +12,7 @@ import { HeroDetailComponent } from './components/hero-detail/hero-detail.compon
 const routes: Routes = [
   {path: '', redirectTo:'heroes', pathMatch:'full'},
   {path: 'heroes', component: ListHeroesComponent},
-  {path:'heores/:id', component: HeroDetailComponent},
+  {path:'heroes/:id', component: HeroDetailComponent},
   {path:'add',component: AddHeroComponent}
   
 ]

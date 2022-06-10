@@ -1,1 +1,40 @@
-<p>list-heroes works!</p>
+<div class="row">
+    <div class="col-md-6">
+      <h4>List of Heroes</h4>
+      <ul class=" list list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let hero of heroes; let i = index"
+          [class.active]="i == currentIndex"
+          (click)="setActiveHero(hero, i)"
+        >
+          {{ hero.name }}
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-6">
+        <div *ngIf="currentHero.id">
+            <h4> Hero Description </h4>
+            <img [src]="currentHero.picture" alt="Mountain" style="width:300px;height: 300px; padding-top: 5%; padding-bottom: 5%;">
+            <div >
+                <label><strong> Name: </strong></label> {{currentHero.name}}
+            </div>
+            <div >
+                <label><strong> Alter Ego: </strong></label> {{currentHero.alterEgo}}
+            </div>
+            <div>
+                <label><strong> Power: </strong></label> {{currentHero.power}}
+            </div>
+           <div class="row" style="margin: auto; margin-top: 5%;">
+            <a class="badge badge-warning" routerLink="/heroes/{{currentHero.id}}" style="size: 100px; ">
+                Edit
+            </a>
+              <button class="badge badge-danger mr-2" (click)="deleteHero()" style="margin-left: 5%">
+                Delete
+              </button>
+              <p>{{ message }}</p>
+            </div>
+        </div>
+        
+      </div>
+    </div>
